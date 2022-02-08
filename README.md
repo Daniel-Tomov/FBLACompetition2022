@@ -12,7 +12,7 @@ Feb 4, 2022 - https://youtu.be/yQBg888QrCo
 
 Flask - used to host the website. Also used for key functionality like the "for" loop to add different attractions to webpage with little code. Also responsible for "if" statement that shows the user if their search criterea does not have any matches
 
-Replit DB - used to store and query the information for each attraction.
+Replit DB - used to store and query the information for each attraction. **It seems the Replit website must be used to use their Python package.**
 
 # Images
 
