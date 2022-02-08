@@ -1,0 +1,115 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+		<meta name="keywords" content="HTML,CSS,JavaScript">
+		<meta name="author" content="Daniel Tomov">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>View Attractions in Virginia Beach</title>
+    <link rel="icon" type="image/jpg" href="">
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <div id ="logo">
+          <img src="https://www.virginia.org/includes/public/assets/shared/logos/vifl-logo.svg">
+        </div>
+
+        <nav>
+          <ul id="navUl">
+            <li class="navItem"><a href="">Places to Visit</a></li>
+            <li class="navItem"><a href="">Things to do</a></li>
+            <li class="navItem"><a href="">Events</a></li>
+            <li class="navItem"><a href="">Places to Stay</a></li>
+            <li class="navItem"><a href="">Deals</a></li>
+        </nav>
+
+      </header>
+      <main>
+        <div id="formDiv">
+        <form action="#" method="post">
+          <ul>
+            <li><p class="searchText">Filter your search by type of attraction:</p><li>
+            <li><div class="checkBox">
+              <input type="checkbox" name="park" {{ checkBoxes[6] }}><p>Park</p>
+            </div></li>
+            <li><div class="checkBox">
+              <input type="checkbox" name="amusement" {{ checkBoxes[7] }}><p>Amusement</p>
+            </div></li>
+            <li><div class="checkBox">
+              <input type="checkbox" name="museum" {{ checkBoxes[8] }}><p>Museum</p>
+            </div></li>
+            <li><div class="checkBox">
+              <input type="checkbox" name="cave" {{ checkBoxes[9] }}><p>Cave</p>
+            </div></li>
+            <li><div class="checkBox">
+              <input type="checkbox" name="historical" {{ checkBoxes[10] }}><p>Historical</p>
+            </div></li>
+            <li><div class="checkBox">
+              <input type="checkbox" name="outdoor" {{ checkBoxes[11] }}><p>Outdoor</p>
+            </div></li>
+            <li><div class="checkBox">
+              <input type="checkbox" name="scienceCenter" {{ checkBoxes[12] }}><p>Science Center</p>
+            </div></li>
+            <li><p class="searchText">Or filter by provinces:</p><li>
+              <li><div class="checkBox">
+              <input type="radio" name="provinceSelector" value="virginiabeach" {{ checkBoxes[1] }}><p>Virginia Beach</p>
+            </div></li>
+            <li><div class="checkBox">
+              <input type="radio" name="provinceSelector" value="norfolk" {{ checkBoxes[0] }}><p>Norfolk</p>
+            </div></li>
+            <li><div class="checkBox">
+              <input type="radio" name="provinceSelector" value="danville" {{ checkBoxes[4] }}><p>Danville</p>
+            </div></li>
+            <li><div class="checkBox">
+              <input type="radio" name="provinceSelector" value="richmond" {{ checkBoxes[2] }}><p>Richmond</p>
+            </div></li>
+            <li><div class="checkBox">
+              <input type="radio" name="provinceSelector" value="front royale" {{ checkBoxes[3] }}><p>Front Royal</p>
+            </div></li>
+            <li><div class="checkBox">
+              <input type="radio" name="provinceSelector" value="williamsburg" {{ checkBoxes[13] }}><p>Williamsburg</p>
+            </div></li>
+            <li><div class="checkBox">
+              <input type="radio" name="provinceSelector" value="luray" {{ checkBoxes[5] }}><p>Luray</p>
+            </div></li>
+            <button type="submit" name="button" value="search">Apply Filters</button>
+          </ul>
+        </form>
+        <button id="reset" onclick="reset()">Reset Filters</button>
+        </div>
+        <div id="content">
+          {% if attraction|length == 0 %}
+            <div class="attractionBox">
+              <div id="noMatch">
+                <p class="attractionName">There were no matches for your criteria</p>
+            </div>
+          {% endif %}
+          {% for record in attraction %}
+            <div class="attractionBox">
+              <div id="attractionInfo">
+                <p class="attractionName">{{record[4]}}</p>
+                <p class="attractionAddr">Address: {{record[0]}}</p>
+                <p>Website: <a class="attractionWeb" href={{record[1]}}>{{record[1]}}</a></p>
+                <p class="attractionTags">Tags: {{record[2]}}</p>
+              </div>
+              <div id="attractionImgDiv">
+                <img class="attractionImg" src={{record[3]}} alt={{record[4]}}>
+              </div>
+            </div>
+          {% endfor %}
+          <p class="attractionName">Attractions on this page: {{ attraction|length }}
+        </div>
+      </main>
+    </div>
+  </body>
+    <script>
+      function reset(){
+        var elements = document.getElementsByClassName("checkBox");
+        for (i = 0; i < elements.length; i++){
+          elements[i].firstElementChild.checked = false;
+        }
+      }
+    </script>
+</html>
