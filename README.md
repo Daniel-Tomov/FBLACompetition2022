@@ -7,3 +7,13 @@ https://www.fbla-pbl.org/fbla-topics Then select "Coding & Programming"
 # Streamed live:
 
 Feb 4, 2022 - https://youtu.be/yQBg888QrCo
+
+# Dependencies:
+
+Flask - used to host the website. Also used for key functionality like the "for" loop to add different attractions to webpage with little code. Also responsible for "if" statement that shows the user if their search criterea does not have any matches
+
+Replit DB - used to store and query the information for each attraction.
+
+# Images
+
+Images property of the respective attraction.
