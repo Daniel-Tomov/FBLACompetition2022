@@ -1,5 +1,4 @@
-from flask import Flask, render_template, url_for, redirect, request
-import time
+from flask import Flask, render_template, request
 from replit import db
 
 app = Flask(__name__)
