@@ -1,5 +1,5 @@
-<DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
 		<meta name="keywords" content="HTML,CSS,JavaScript">
@@ -13,7 +13,7 @@
     <div id="container">
       <header>
         <div id ="logo">
-          <img src="https://www.virginia.org/includes/public/assets/shared/logos/vifl-logo.svg">
+          <img src="https://www.virginia.org/includes/public/assets/shared/logos/vifl-logo.svg" alt="logo">
         </div>
 
         <nav>
@@ -23,6 +23,7 @@
             <li class="navItem"><a href="">Events</a></li>
             <li class="navItem"><a href="">Places to Stay</a></li>
             <li class="navItem"><a href="">Deals</a></li>
+          </ul>
         </nav>
 
       </header>
@@ -30,7 +31,9 @@
         <div id="formDiv">
         <form action="#" method="post">
           <ul>
-            <li><p class="searchText">Filter your search by type of attraction:</p><li>
+            <li><p class="searchText">Filter your search by:</p><li>
+            <li><p class="searchText">Type of Attraction</p><li>
+
             <li><div class="checkBox">
               <input type="checkbox" name="park" {{ checkBoxes[6] }}><p>Park</p>
             </div></li>
@@ -50,9 +53,16 @@
               <input type="checkbox" name="outdoor" {{ checkBoxes[11] }}><p>Outdoor</p>
             </div></li>
             <li><div class="checkBox">
-              <input type="checkbox" name="scienceCenter" {{ checkBoxes[12] }}><p>Science Center</p>
+              <input type="checkbox" name="scienceCenter" {{ checkBoxes[13] }}><p>Science Center</p>
             </div></li>
-            <li><p class="searchText">Or filter by provinces:</p><li>
+            <li><div class="checkBox">
+              <input type="checkbox" name="art" {{ checkBoxes[12] }}><p>Art</p>
+            </div></li>
+            <li><p class="searchText">Lodging</p></li>
+            <li><div class="checkBox">
+              <input type="checkbox" name="breakfast" {{ checkBoxes[15] }}><p>Breakfast</p>
+            </div></li>
+            <li><p class="searchText">Provinces</p><li>
               <li><div class="checkBox">
               <input type="radio" name="provinceSelector" value="virginiabeach" {{ checkBoxes[1] }}><p>Virginia Beach</p>
             </div></li>
@@ -74,7 +84,10 @@
             <li><div class="checkBox">
               <input type="radio" name="provinceSelector" value="luray" {{ checkBoxes[5] }}><p>Luray</p>
             </div></li>
-            <button type="submit" name="button" value="search">Apply Filters</button>
+            <li><div class="checkBox">
+              <input type="radio" name="provinceSelector" value="natural bridge" {{ checkBoxes[14] }}><p>Natural Bridge</p>
+            </div></li>
+            <li><button id ="applyButton" type="submit" name="button" value="search">Apply Filters</button></li>
           </ul>
         </form>
         <button id="reset" onclick="reset()">Reset Filters</button>
@@ -88,14 +101,14 @@
           {% endif %}
           {% for record in attraction %}
             <div class="attractionBox">
-              <div id="attractionInfo">
+              <div class="attractionInfo">
                 <p class="attractionName">{{record[4]}}</p>
                 <p class="attractionAddr">Address: {{record[0]}}</p>
-                <p>Website: <a class="attractionWeb" href={{record[1]}}>{{record[1]}}</a></p>
+                <p>Website: <a class="attractionWeb" href="{{record[1]}}">{{record[1]}}</a></p>
                 <p class="attractionTags">Tags: {{record[2]}}</p>
               </div>
-              <div id="attractionImgDiv">
-                <img class="attractionImg" src={{record[3]}} alt={{record[4]}}>
+              <div class="attractionImgDiv">
+                <img class="attractionImg" src="{{record[3]}}" alt="{{record[4]}}">
               </div>
             </div>
           {% endfor %}

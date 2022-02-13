@@ -4,7 +4,7 @@ from replit import db
 app = Flask(__name__)
 #Creating Database
 #Format is Address, Website, Tags, image address, name
-#Tags made: Park, Amusement, Outdoor, Historical, Cave, Museum, Science Center
+#Tags made: Park, Amusement, Outdoor, Historical, Cave, Museum, Science Center, Lodging, Breakfast
 #Provinces: Virginia Beach, Norfolk, Danville, Richmond, Front Royale, Luray
 db["Botanical Garden"] = ['6700 Azalea Garden Rd, Norfolk, VA 23518', 'https://norfolkbotanicalgarden.org/', 'Park, Outdoor', 'https://norfolkbotanicalgarden.org/wp-content/uploads/2017/04/13-perennial-b-hr.jpg', 'The Norfolk Botanical Gardens']
 db["Norfolk Zoo"] = ['3500 Granby St, Norfolk, VA 23504', 'https://virginiazoo.org/', 'Park, Outdoor', 'https://virginiazoo.org/wp-content/themes/vazoo/template-parts/header/Virginia-Zoo-logo-300p.png', 'Norfolk Zoo']
@@ -17,17 +17,17 @@ db["Luray Caverns"] = ['101 Cave Hill Rd, Luray, VA 22835', 'https://luraycavern
 db["Virginia Museum of Fine Arts"] = ['200 N Arthur Ashe Blvd, Richmond, VA 23220', 'http://www.vmfa.museum/', 'Museum', 'https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/virginia/E201410_0402_1b8e0fd6-5056-a36a-0714fcaef4db8f57.jpg', 'Virginia Museum of Fine Arts']
 db["Jamestown"] = ['1368 Colonial Parkway, Jamestown, Virginia', 'https://historicjamestowne.org/', 'Outdoor, Historical, Park', 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/1639_Jamestown_Church_%282883847775%29.jpg/250px-1639_Jamestown_Church_%282883847775%29.jpg', 'Jamestown']
 db["Yorktown"] = ['301 Main Street, Yorktown, VA 23690', 'https://www.visityorktown.org/', 'Museum, Outdoor', 'https://www.visityorktown.org/ImageRepository/Document?documentID=816', 'Yorktown']
-db["Natural Bridge of Virginia"] = ['15 Appledore Lane Natural Bridge, VA 24578', 'https://www.dcr.virginia.gov/state-parks/natural-bridge', 'Park, Outdoor', 'https://www.dcr.virginia.gov/state-parks/image/data/nb-image-01.jpg', 'Natural Bridge of Virginia']
+db["Natural Bridge of Virginia"] = ['15 Appledore Lane, Natural Bridge, VA 24578', 'https://www.dcr.virginia.gov/state-parks/natural-bridge', 'Park, Outdoor', 'https://www.dcr.virginia.gov/state-parks/image/data/nb-image-01.jpg', 'Natural Bridge of Virginia']
 db["Virginia Aquarium"] = ['717 General Booth Blvd, Virginia Beach, VA 23451', 'https://www.virginiaaquarium.com/', 'Museum, Outdoor', 'https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_907,q_75,w_1100/v1/clients/virginiabeachva/RED_SEA05_f9b991e2-61d9-4293-bd54-437651ff1a30.jpg', 'Virginia Aquarium & Marine Science Center']
 db["Adventure Park"] = ['801 General Booth Blvd, Virginia Beach, VA 23451', 'https://myadventurepark.com/location/virginia-beach-va/', 'Outdoor, Amusement', 'https://30zhnx2odhzl2kels211p0eu-wpengine.netdna-ssl.com/wp-content/uploads/2019/08/virginia-logo-200x58.png', 'Adventure Park']
 db["Richmond Science Center"] = ['2500 W Broad St, Richmond, VA 23220', 'https://smv.org/', 'Museum, Science Center', 'https://smv.org/static/images/logo.png', 'Richmond Science Center']
 db["Danville Science Center"] = ['677 Craghead St, Danville, VA 24541', 'https://dsc.smv.org/', 'Science Center', 'https://dsc.smv.org/static/images/logo.png', 'Danville Science Center']
-db["Monticello"] = ['', '', '', '', '']
-db["Monticello"] = ['', '', '', '', '']
-db["Monticello"] = ['', '', '', '', '']
-db["Monticello"] = ['', '', '', '', '']
-db["Monticello"] = ['', '', '', '', '']
-db["Monticello"] = ['', '', '', '', '']
+db["Moca"] = ['2200 Parks Ave, Virginia Beach, VA 23451', 'https://virginiamoca.org/', 'Museum, Art', 'https://images.ctfassets.net/mcewm80m4225/3VozPM0ZQa14xh4EAUEZup/3fb09606252fb0be70071ce56f9d69b7/55Agnes_Grochulska_ARCHETYPES_3_20x26_inches_oil_on_canvas.jpg?w=1499&h=2008&q=50&fm=webp', 'Virginia Museum of Contemperary Art']
+db["Massanutten "] = ['', 'https://www.massresort.com/', 'Outdoor, Park, Amusement', 'https://www.massresort.com/upload/cache/home_gallery.image/xs/homegallery_water_park-observation-web__1.jpg', '']
+db[""] = ['', '', '', '', '']
+db["English Inn"] = ['2000 Morton Dr, Charlottesville, VA 22903', 'https://englishinncharlottesville.com/', 'Lodging, Breakfast', '', 'English Inn']
+db["Safari Park"] = ['229 Safari Ln, Natural Bridge, VA 24578', 'https://www.virginiasafaripark.com/', 'Outdoor, Park, Amusement', 'https://www.virginiasafaripark.com/resources/themes/gbzoo/assets/images/vsp-logo.png', 'Virginia Safari Park']
+db["Wildfowl Museum"] = ['1113 Atlantic Ave, Virginia Beach, VA 23451', 'https://awhm.org/', 'Museum', 'http://awhm.org/wp-content/uploads/thegem-logos/logo_505e641b3b7aa720850fbc71486e86fe_1x.png', 'Atlantic Windfowl Heritage Museum']
 db["Monticello"] = ['', '', '', '', '']
 db["Monticello"] = ['', '', '', '', '']
 db["Monticello"] = ['', '', '', '', '']
@@ -83,11 +83,11 @@ def remove_keys():
     del db[rec]
 #remove_keys()
 
-def get_based_on_tags(park, amusement, museum, cave, historical, outdoor, scienceCenter, province):
+def get_based_on_tags(park, amusement, museum, cave, historical, outdoor, scienceCenter, art, breakfast, province):
   keys = db.keys()
   global returnList
   global checkList
-  checkList = ['', '', '', '', '', '', '', '', '', '', '', '', '', '']
+  checkList = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
   for record in keys:
     #print(record) 
     value = db[record]
@@ -120,8 +120,18 @@ def get_based_on_tags(park, amusement, museum, cave, historical, outdoor, scienc
       checkList[13] = "checked"
       if ("Williamsburg" not in value[0]):
         remove_attr_to_list(record)
+    elif (province == "natural bridge"):
+      checkList[14] = "checked"
+      if ("Natural Bridge" not in value[0]):
+        remove_attr_to_list(record)
     
 
+    if (park == "on"):
+      checkList[6] = "checked"
+      if ("Park" not in value[2]):
+        #print("park")
+        #print(value[4])
+        remove_attr_to_list(record)
 
     if (park == "on"):
       checkList[6] = "checked"
@@ -170,6 +180,19 @@ def get_based_on_tags(park, amusement, museum, cave, historical, outdoor, scienc
       if ("Science Center" not in value[2]):
         #print("Science Center")
         #print(value[4])
+        remove_attr_to_list(record)
+    if (art == "on"):
+      checkList[13] = "checked"
+      if ("Art" not in value[2]):
+        #print("Science Center")
+        #print(value[4])
+        remove_attr_to_list(record)
+
+    if (breakfast == "on"):
+      checkList[15] = "checked"
+      if ("Breakfast" not in value[2]):
+        #print("Science Center")
+        #print(value[4])
         remove_attr_to_list(record)    
 
 
@@ -188,8 +211,10 @@ def main():
       historical = request.form.get("historical")
       outdoor = request.form.get("outdoor")
       scienceCenter = request.form.get("scienceCenter")
+      art = request.form.get("art")
+      breakfast = request.form.get("breakfast")
       province = request.form.get("provinceSelector")
-      get_based_on_tags(park, amusement, museum, cave, historical, outdoor, scienceCenter, province)
+      get_based_on_tags(park, amusement, museum, cave, historical, outdoor, scienceCenter, art, breakfast, province)
 
       #print(returnList)
       #print(checkList)
