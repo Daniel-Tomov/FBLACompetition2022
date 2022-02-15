@@ -23,9 +23,9 @@ db["Adventure Park"] = ['801 General Booth Blvd, Virginia Beach, VA 23451', 'htt
 db["Richmond Science Center"] = ['2500 W Broad St, Richmond, VA 23220', 'https://smv.org/', 'Museum, Science Center', 'https://smv.org/static/images/logo.png', 'Richmond Science Center']
 db["Danville Science Center"] = ['677 Craghead St, Danville, VA 24541', 'https://dsc.smv.org/', 'Science Center', 'https://dsc.smv.org/static/images/logo.png', 'Danville Science Center']
 db["Moca"] = ['2200 Parks Ave, Virginia Beach, VA 23451', 'https://virginiamoca.org/', 'Museum, Art', 'https://images.ctfassets.net/mcewm80m4225/3VozPM0ZQa14xh4EAUEZup/3fb09606252fb0be70071ce56f9d69b7/55Agnes_Grochulska_ARCHETYPES_3_20x26_inches_oil_on_canvas.jpg?w=1499&h=2008&q=50&fm=webp', 'Virginia Museum of Contemperary Art']
-db["Massanutten "] = ['', 'https://www.massresort.com/', 'Outdoor, Park, Amusement', 'https://www.massresort.com/upload/cache/home_gallery.image/xs/homegallery_water_park-observation-web__1.jpg', '']
-db[""] = ['', '', '', '', '']
-db["English Inn"] = ['2000 Morton Dr, Charlottesville, VA 22903', 'https://englishinncharlottesville.com/', 'Lodging, Breakfast', '', 'English Inn']
+db["Massanutten "] = ['1822 Resort Drive, McGaheysville, VA 22840', 'https://www.massresort.com/', 'Outdoor, Park, Amusement', 'https://www.massresort.com/upload/cache/home_gallery.image/xs/homegallery_water_park-observation-web__1.jpg', 'Massanutten Resort']
+db["Governers Inn"] = ['9826 Midlothian Turnpike, North Chesterfield, 23235 ', 'https://www.bestwestern.com/en_US/book/hotels-in-north-chesterfield/best-western-plus-governor-s-inn/propertyCode.47077.html', 'Lodging, Breakfast', 'https://d2nuhorlnps36p.cloudfront.net/hotels/47077/47077_040_Exterior.jpg', 'Best Western Plus Governors Inn']
+db["English Inn"] = ['2000 Morton Dr, Charlottesville, VA 22903', 'https://englishinncharlottesville.com/', 'Lodging, Breakfast', 'https://englishinncharlottesville.com/assets/images/header_images/English-Inn-Header.jpg', 'English Inn']
 db["Safari Park"] = ['229 Safari Ln, Natural Bridge, VA 24578', 'https://www.virginiasafaripark.com/', 'Outdoor, Park, Amusement', 'https://www.virginiasafaripark.com/resources/themes/gbzoo/assets/images/vsp-logo.png', 'Virginia Safari Park']
 db["Wildfowl Museum"] = ['1113 Atlantic Ave, Virginia Beach, VA 23451', 'https://awhm.org/', 'Museum', 'http://awhm.org/wp-content/uploads/thegem-logos/logo_505e641b3b7aa720850fbc71486e86fe_1x.png', 'Atlantic Windfowl Heritage Museum']
 db["Monticello"] = ['', '', '', '', '']
@@ -87,7 +87,7 @@ def get_based_on_tags(park, amusement, museum, cave, historical, outdoor, scienc
   keys = db.keys()
   global returnList
   global checkList
-  checkList = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+  checkList = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
   for record in keys:
     #print(record) 
     value = db[record]
@@ -123,6 +123,14 @@ def get_based_on_tags(park, amusement, museum, cave, historical, outdoor, scienc
     elif (province == "natural bridge"):
       checkList[14] = "checked"
       if ("Natural Bridge" not in value[0]):
+        remove_attr_to_list(record)
+    elif (province == "charlottesville"):
+      checkList[16] = "checked"
+      if ("Charlottesville" not in value[0]):
+        remove_attr_to_list(record)
+    elif (province == "chesterfield"):
+      checkList[17] = "checked"
+      if ("Chesterfield" not in value[0]):
         remove_attr_to_list(record)
     
 
@@ -222,7 +230,7 @@ def main():
       
   elif request.method == "GET":
     checkList = []
-    checkList = ['', '', '', '', '', '', '', '', '', '', '', '', '']
+    checkList = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
     return render_template("index.html", attraction = returnList, checkBoxes = checkList)
   
 if __name__ == "__main__":
