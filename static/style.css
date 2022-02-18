@@ -115,7 +115,7 @@ nav{
 
 #formDiv{
   height:550px;
-  width: 150px;
+  width: 250px;
   float:left;
   margin-top:50px;
   margin-left:15%;
@@ -132,8 +132,8 @@ nav{
 }
 
 #formDiv > form > ul {
-  width: 150px;
-  padding:0;
+  width: 250px;
+  padding:0;    
   margin:0;
 }
 
@@ -147,7 +147,7 @@ margin-top:30px;
 }
 
 .checkBox{
-  width:150px;
+  width:250px;
 }
 
 .checkBox > input{
