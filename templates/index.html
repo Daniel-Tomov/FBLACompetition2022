@@ -33,66 +33,21 @@
           <ul>
             <li><p class="searchText">Filter your search by:</p><li>
             <li><p class="searchText">Type of Attraction</p><li>
-
-            <li><div class="checkBox">
-              <input type="checkbox" name="park" {{ checkBoxes[6] }}><p>Park</p>
-            </div></li>
-            <li><div class="checkBox">
-              <input type="checkbox" name="amusement" {{ checkBoxes[7] }}><p>Amusement</p>
-            </div></li>
-            <li><div class="checkBox">
-              <input type="checkbox" name="museum" {{ checkBoxes[8] }}><p>Museum</p>
-            </div></li>
-            <li><div class="checkBox">
-              <input type="checkbox" name="cave" {{ checkBoxes[9] }}><p>Cave</p>
-            </div></li>
-            <li><div class="checkBox">
-              <input type="checkbox" name="historical" {{ checkBoxes[10] }}><p>Historical</p>
-            </div></li>
-            <li><div class="checkBox">
-              <input type="checkbox" name="outdoor" {{ checkBoxes[11] }}><p>Outdoor</p>
-            </div></li>
-            <li><div class="checkBox">
-              <input type="checkbox" name="scienceCenter" {{ checkBoxes[13] }}><p>Science Center</p>
-            </div></li>
-            <li><div class="checkBox">
-              <input type="checkbox" name="art" {{ checkBoxes[12] }}><p>Art</p>
-            </div></li>
+            {% for fil in filters %}
+              <li><div class="checkBox">
+              <input type="checkbox" name="{{fil}}" {{ checkBoxes[filters.index(fil)] }}><p>{{fil}}</p>
+              </div></li>
+            {% endfor %}
             <li><p class="searchText">Lodging</p></li>
             <li><div class="checkBox">
               <input type="checkbox" name="breakfast" {{ checkBoxes[15] }}><p>Breakfast</p>
             </div></li>
             <li><p class="searchText">Provinces</p><li>
+              {% for prov in provinceList %}
               <li><div class="checkBox">
-              <input type="radio" name="provinceSelector" value="virginiabeach" {{ checkBoxes[1] }}><p>Virginia Beach</p>
+              <input type="radio" name="provinceSelector" value="{{prov}}" {{ checkBoxes[provinceList.index(prov) + filters|length] }}><p>{{prov}}</p>
             </div></li>
-            <li><div class="checkBox">
-              <input type="radio" name="provinceSelector" value="norfolk" {{ checkBoxes[0] }}><p>Norfolk</p>
-            </div></li>
-            <li><div class="checkBox">
-              <input type="radio" name="provinceSelector" value="danville" {{ checkBoxes[4] }}><p>Danville</p>
-            </div></li>
-            <li><div class="checkBox">
-              <input type="radio" name="provinceSelector" value="richmond" {{ checkBoxes[2] }}><p>Richmond</p>
-            </div></li>
-            <li><div class="checkBox">
-              <input type="radio" name="provinceSelector" value="front royale" {{ checkBoxes[3] }}><p>Front Royal</p>
-            </div></li>
-            <li><div class="checkBox">
-              <input type="radio" name="provinceSelector" value="williamsburg" {{ checkBoxes[13] }}><p>Williamsburg</p>
-            </div></li>
-            <li><div class="checkBox">
-              <input type="radio" name="provinceSelector" value="luray" {{ checkBoxes[5] }}><p>Luray</p>
-            </div></li>
-            <li><div class="checkBox">
-              <input type="radio" name="provinceSelector" value="natural bridge" {{ checkBoxes[14] }}><p>Natural Bridge</p>
-            </div></li>
-            <li><div class="checkBox">
-              <input type="radio" name="provinceSelector" value="charlottesville" {{ checkBoxes[16] }}><p>Charlottesville</p>
-            </div></li>
-            <li><div class="checkBox">
-              <input type="radio" name="provinceSelector" value="chesterfield" {{ checkBoxes[17] }}><p>Chesterfield</p>
-            </div></li>
+            {% endfor %}
             <li><button id ="applyButton" type="submit" name="button" value="search">Apply Filters</button></li>
           </ul>
         </form>

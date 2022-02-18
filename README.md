@@ -4,6 +4,10 @@ This is a program for the FBLA 2022 Programming Competition. The task is to crea
 
 https://www.fbla-pbl.org/fbla-topics Then select "Coding & Programming"
 
+# How it works:
+
+
+
 # Streamed live:
 
 Feb 4, 2022 - https://youtu.be/yQBg888QrCo
