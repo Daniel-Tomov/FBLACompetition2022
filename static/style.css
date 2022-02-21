@@ -214,4 +214,12 @@ margin-top:30px;
 .attractionImg{
   max-height: 70%;
   max-width: 100%;
+  clip: rect(0px,90px,200px,0px);
+}
+
+
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+#map {
+  height: 100%;
 }
