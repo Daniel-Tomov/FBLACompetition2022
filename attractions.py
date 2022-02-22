@@ -30,9 +30,9 @@ attr[19] = ['2000 Morton Dr, Charlottesville, VA 22903', 'https://englishinnchar
 attr[20] = ['229 Safari Ln, Natural Bridge, VA 24578', 'https://www.virginiasafaripark.com/', 'Outdoor, Park, Amusement', 'https://www.virginiasafaripark.com/resources/themes/gbzoo/assets/images/vsp-logo.png', 'Virginia Safari Park', '', '']
 attr[21] = ['1113 Atlantic Ave, Virginia Beach, VA 23451', 'https://awhm.org/', 'Museum', 'http://awhm.org/wp-content/uploads/thegem-logos/logo_505e641b3b7aa720850fbc71486e86fe_1x.png', 'Atlantic Windfowl Heritage Museum', '', '']
 attr[22] = ['Arlington National Cemetery, Arlington, VA 22211', 'https://www.arlingtoncemetery.mil', 'Outdoor, Park', 'https://www.arlingtoncemetery.mil/portals/0/ANC_logo_new.png', 'Arlington National Cemetery', '', '']
-attr[23] = ['1290 Richmond Ave, Staunton', 'http://www.frontiermuseum.org/', 'Museum, Park, Outdoor', 'https://www.frontiermuseum.org/wp-content/uploads/2013/08/FCM-Webheader1.png', 'Frontier Culture Museum', '', '']
-attr[24] = ['', '', '', '', '', '', '']
-attr[25] = ['', '', '', '', '', '', '']
+attr[23] = ['1290 Richmond Ave, Staunton', 'http://www.frontiermuseum.org/', 'Museum, Park, Outdoor', 'https://fblacompetition2022.danieltomov.repl.co/static/FCM.png', 'Frontier Culture Museum', '', '']
+attr[24] = ['1341 Princess Anne Rd, Virginia Beach, VA 23457', 'https://militaryaviationmuseum.org/', 'Museum', 'https://militaryaviationmuseum.org/wp-content/uploads/2018/04/MAM-HeaderLogosmall.png', 'Military Aviation Museum', '', '']
+attr[25] = ['780 University Blvd, Harrisonburg, VA 22807', 'https://www.jmu.edu/arboretum/index.shtml', 'Park, Outdoor', 'https://fblacompetition2022.danieltomov.repl.co/static/Arboretum.png', 'Edith J. Carrier Arboretum', '', '']
 attr[26] = ['', '', '', '', '', '', '']
 attr[27] = ['', '', '', '', '', '', '']
 attr[28] = ['', '', '', '', '', '', '']
@@ -61,4 +61,4 @@ attr[50] = ['', '', '', '', '', '', '']
 attr[51] = ['', '', '', '', '', '', '']
 
 for a in attr:
-  storedAttr.append(attractions(a[0], a[1], a[2], a[3], a[4], a[5], a[6])) 
+  storedAttr.append(attractions(a[0], a[1], a[2], a[3], a[4], a[5], a[6]))

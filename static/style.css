@@ -214,7 +214,7 @@ margin-top:30px;
 .attractionImg{
   max-height: 70%;
   max-width: 100%;
-  clip: rect(0px,90px,200px,0px);
+  background-color:grey;
 }
 
 
