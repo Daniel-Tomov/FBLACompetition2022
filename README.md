@@ -6,7 +6,13 @@ https://www.fbla-pbl.org/fbla-topics Then select "Coding & Programming"
 
 # How it works:
 
+At startup, a list is created with different classes. Inside each class, there is an attraction with different attributes. Attributes include the attraction's address, website, tags to filter, image, and name. After they are loaded into classes, the different regions and tags are loaded into two separate lists, **provinceList** and **filters** respectively, to make the inputing of new attractions dynamic. In other words, as more attractions are added, the filters and provinces update with the attractions. There is also antoher list that stores the attractions and is not edited.
 
+<h3>GET request (page load that does not use "Apply Filters" button)</h3>
+Everytime a user loads the webpage normally (they are not submitting a request), the non-changing list is sent. This should decrease the loading of the webpage on first load because almost no data is being changed. 
+
+<h3>POST request (every page load that uses "Apply Filters" button</h3>
+On a POST request, the first thing that is done is the program checks if the "Apply Filters" button was used.
 
 # Streamed live:
 
@@ -14,7 +20,8 @@ Feb 4, 2022 - https://youtu.be/yQBg888QrCo
 
 # Python Dependencies:
 
-Flask - used to host the website. Responsible for processing the filters the user specified and returning the attractions that match. Also used for key functionality like the "for" loop to add different attractions to webpage with little code and the "if" statement that shows the user if their search criterea does not have any matches.
+<h3>Flask</h3>
+Used to host the website. Responsible for processing the filters the user specified and returning the attractions that match. Also used for key functionality like the "for" loop to add different attractions to webpage with little code and the "if" statement that shows the user if their search criterea does not have any matches.
 
 
 # Images
