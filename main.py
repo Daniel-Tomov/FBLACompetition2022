@@ -39,7 +39,9 @@ def remove_prov_from_list(val, actualVal):
     global filters
     global checkList
     #check if the the user selected the province
-    if val == actualVal:
+    if (actualVal == "All Provinces"):
+      checkList[provinceList.index(actualVal) + len(filters)] = "checked"
+    elif val == actualVal:
         #set the same index as the province in its list in the checked list
         checkList[provinceList.index(actualVal) + len(filters)] = "checked"
         for i in storedAttr:
@@ -131,6 +133,7 @@ for i in range(0, len(storedAttr)):
 #Sort the provinces in alphabetical order
 provinceList.sort()
 filters.sort()
+provinceList.insert(0, 'All Provinces')
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=80)
