@@ -39,7 +39,7 @@ def remove_prov_from_list(val, actualVal):
     global filters
     global checkList
     #check if the the user selected the province
-    if (actualVal == "All Provinces"):
+    if (val == "All Provinces"):
       checkList[provinceList.index(actualVal) + len(filters)] = "checked"
     elif val == actualVal:
         #set the same index as the province in its list in the checked list
@@ -49,7 +49,7 @@ def remove_prov_from_list(val, actualVal):
             #Splits the address into an array
             prov = data[0].split(", ")
             #remove attractions that are not in the selected province
-            if data[0] != "" and actualVal not in prov[1]:
+            if actualVal not in prov[1]:
                 if data in returnList:
                     returnList.remove(data)
 
