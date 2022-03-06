@@ -14,14 +14,14 @@ Everytime a user loads the webpage normally (they are not submitting a request),
 <h3>POST request (every page load that uses "Apply Filters" button</h3>
 On a POST request, the first thing that is done is the program checks if the "Apply Filters" button was used. Then checks for which tags were checked and the appropriate attractions are removed from the <b>returnList</b>. There are also checks for which province was checked and the provinces that are not that province are removed. The <b>checkList</b> is contains the check status of the filters and provinces at the same index as the filters and provinces. In the <b>checkList</b>, the filters are first and then the provinces. The <b>returnList</b> now contains only the attractions that fit the criteria of the tags and provinces the user picked. This list is returned along with the <b>filters</b>, <b>provinceList</b>, and <b>checkList</b>.
 
-# Streamed live:
-
-Feb 4, 2022 - https://youtu.be/yQBg888QrCo
-
 # Python Dependencies:
 
 <h3>Flask</h3>
 Used to host the website. Responsible for processing the filters the user specified and returning the attractions that match. Also used for key functionality like the "for" loop to add different attractions to webpage with little code and the "if" statement that shows the user if their search criterea does not have any matches.
+
+# Streamed live:
+
+Feb 4, 2022 - https://youtu.be/yQBg888QrCo
 
 
 # Images

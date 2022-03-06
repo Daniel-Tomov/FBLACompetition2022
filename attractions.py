@@ -1,6 +1,6 @@
 from Class import attractions
 
-attr = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+attr = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
 
 storedAttr = []
 
@@ -8,7 +8,7 @@ attr[0] = ['6700 Azalea Garden Rd, Norfolk, VA 23518', 'https://norfolkbotanical
 attr[1] = ['3500 Granby St, Norfolk, VA 23504', 'https://virginiazoo.org/', 'Park, Outdoor', 'https://virginiazoo.org/wp-content/themes/vazoo/template-parts/header/Virginia-Zoo-logo-300p.png', 'Norfolk Zoo', '', '']
 attr[2] = ['21073 Skyline Drive, Front Royal, Virginia 22630', 'https://www.nps.gov/shen/index.htm', 'Park, Cave, Outdoor', 'https://www.nps.gov/shen/planyourvisit/images/20180807_SwiftRunEntrance_SNP5236_mo_3.jpg?maxwidth=1200&maxheight=1200&autorotate=false', 'Shenandoah National Park', '', '']
 attr[3] =  ['3200 Mount Vernon Memorial Hwy, Mt Vernon, VA 22121', 'https://www.mountvernon.org/', 'Historical, Museum', 'https://mtv-main-assets.mountvernon.org/files/callout/card-full/image/dsc00033.jpg', 'Mount Vernon', '', '']
-attr[4] =  ['1 Busch Gardens Blvd, Williamsburg, VA 23185', 'https://buschgardens.com/williamsburg/', 'Amusement, Park, Outdoor', 'https://seaworld.com/williamsburg/-/media/busch-gardens-williamsburg/images/logos/busch-gardens-williamsburg-logo-outlined.ashx?version=1_202012235536&la=en&hash=355C60FEF829D5ED5EA0B1394C7F54880FCA6F6C', 'Busch Gardens', '', '']
+attr[4] =  ['1 Busch Gardens Blvd, Williamsburg, VA 23185', 'https://buschgardens.com/williamsburg/', 'Amusement, Park, Outdoor, Dining', 'https://seaworld.com/williamsburg/-/media/busch-gardens-williamsburg/images/logos/busch-gardens-williamsburg-logo-outlined.ashx?version=1_202012235536&la=en&hash=355C60FEF829D5ED5EA0B1394C7F54880FCA6F6C', 'Busch Gardens', '', '']
 attr[5] =  ['101 Visitor Center Dr, Williamsburg, VA 23185', 'https://www.colonialwilliamsburg.org/', 'Historical, Outdoor', 'https://www.dailypress.com/resizer/hyeXiK6hZeyUsCSXBC4zMt__MN0=/1200x0/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/CKYPR45675GYHJ2X4DO4MDLXHM.jpg', 'Colonial Williamsburg', '', '']
 attr[6] =  ['931 Thomas Jefferson Pkwy, Charlottesville, VA 22902', 'https://www.monticello.org/', 'Historical, Museum', 'https://monticello-www.s3.amazonaws.com/images/footer-lg.jpg', 'Monticello', '', '']
 attr[7] = ['101 Cave Hill Rd, Luray, VA 22835', 'https://luraycaverns.com/', 'Cave, Museum', 'https://luraycaverns.com/wp-content/uploads/2018/07/luray-caverns-giants.jpg', 'Luray Caverns', '', '']
@@ -21,9 +21,9 @@ attr[13] = ['801 General Booth Blvd, Virginia Beach, VA 23451', 'https://myadven
 attr[14] = ['2500 W Broad St, Richmond, VA 23220', 'https://smv.org/', 'Museum, Science Center', 'https://smv.org/static/images/logo.png', 'Richmond Science Center', '', '']
 attr[15] = ['677 Craghead St, Danville, VA 24541', 'https://dsc.smv.org/', 'Science Center, Indoor', 'https://dsc.smv.org/static/images/logo.png', 'Danville Science Center', '', '']
 attr[16] = ['2200 Parks Ave, Virginia Beach, VA 23451', 'https://virginiamoca.org/', 'Museum, Art, Indoor', 'https://images.ctfassets.net/mcewm80m4225/3VozPM0ZQa14xh4EAUEZup/3fb09606252fb0be70071ce56f9d69b7/55Agnes_Grochulska_ARCHETYPES_3_20x26_inches_oil_on_canvas.jpg?w=1499&h=2008&q=50&fm=webp', 'Virginia Museum of Contemperary Art', '', '']
-attr[17] = ['1822 Resort Drive, McGaheysville, VA 22840', 'https://www.massresort.com/', 'Outdoor, Park, Amusement, Lodging', 'https://www.massresort.com/upload/cache/home_gallery.image/xs/homegallery_water_park-observation-web__1.jpg', 'Massanutten Resort', '', '']
-attr[18] = ['9826 Midlothian Turnpike, North Chesterfield, 23235 ', 'https://www.bestwestern.com/en_US/book/hotels-in-north-chesterfield/best-western-plus-governor-s-inn/propertyCode.47077.html', 'Lodging', 'https://d2nuhorlnps36p.cloudfront.net/hotels/47077/47077_040_Exterior.jpg', 'Best Western Plus Governors Inn', '', '']
-attr[19] = ['2000 Morton Dr, Charlottesville, VA 22903', 'https://englishinncharlottesville.com/', 'Lodging', 'https://englishinncharlottesville.com/assets/images/header_images/English-Inn-Header.jpg', 'English Inn', '', '']
+attr[17] = ['1822 Resort Drive, McGaheysville, VA 22840', 'https://www.massresort.com/', 'Outdoor, Park, Amusement, Lodging, Dining', 'https://www.massresort.com/upload/cache/home_gallery.image/xs/homegallery_water_park-observation-web__1.jpg', 'Massanutten Resort', '', '']
+attr[18] = ['9826 Midlothian Turnpike, North Chesterfield, 23235 ', 'https://www.bestwestern.com/en_US/book/hotels-in-north-chesterfield/best-western-plus-governor-s-inn/propertyCode.47077.html', 'Lodging, Dining', 'https://d2nuhorlnps36p.cloudfront.net/hotels/47077/47077_040_Exterior.jpg', 'Best Western Plus Governors Inn', '', '']
+attr[19] = ['2000 Morton Dr, Charlottesville, VA 22903', 'https://englishinncharlottesville.com/', 'Lodging, Dining', 'https://englishinncharlottesville.com/assets/images/header_images/English-Inn-Header.jpg', 'English Inn', '', '']
 attr[20] = ['229 Safari Ln, Natural Bridge, VA 24578', 'https://www.virginiasafaripark.com/', 'Outdoor, Park, Amusement', 'https://www.virginiasafaripark.com/resources/themes/gbzoo/assets/images/vsp-logo.png', 'Virginia Safari Park', '', '']
 attr[21] = ['1113 Atlantic Ave, Virginia Beach, VA 23451', 'https://awhm.org/', 'Museum, Indoor', 'http://awhm.org/wp-content/uploads/thegem-logos/logo_505e641b3b7aa720850fbc71486e86fe_1x.png', 'Atlantic Windfowl Heritage Museum', '', '']
 attr[22] = ['Arlington National Cemetery, Arlington, VA 22211', 'https://www.arlingtoncemetery.mil', 'Outdoor, Park', 'https://www.arlingtoncemetery.mil/portals/0/ANC_logo_new.png', 'Arlington National Cemetery', '', '']
@@ -32,7 +32,7 @@ attr[24] = ['1341 Princess Anne Rd, Virginia Beach, VA 23457', 'https://military
 attr[25] = ['780 University Blvd, Harrisonburg, VA 22807', 'https://www.jmu.edu/arboretum/index.shtml', 'Park, Outdoor', 'https://fblacompetition2022.danieltomov.repl.co/static/Arboretum.png', 'Edith J. Carrier Arboretum', '', '']
 attr[26] = ['6511 Sudley Rd, Manassas, VA 20109','https://www.nps.gov/mana/index.htm', 'Outdoor, Park, Historical, Museum', 'https://www.nps.gov/common/uploads/grid_builder/mana/crop16_9/4FA88427-D9D3-3DF5-7D5191BA361F3467.jpg?width=465&quality=90&mode=crop', 'Manassas National Battlefield Park', '', '']
 attr[27] = ['100 Museum Dr, Newport News, VA 23606', 'https://www.marinersmuseum.org/', 'Museum', 'https://www.marinersmuseum.org/wp-content/themes/mariners2015/images/logo.png', 'The Mariner’s Museum and Park', '', '']
-attr[28] = ['Assateague Island, Assateague Island', 'https://www.nps.gov/asis/index.htm', 'Island, Outdoor, Park, Beach', 'https://www.nps.gov/common/uploads/grid_builder/asis/crop16_9/09BD77B1-F81F-2912-76E01C24EEEB4AF1.jpg?width=307&quality=90&mode=crop', 'Assateague Island', '', '']
+attr[28] = ['E Main St, Charlottesville, VA 22902', 'https://www.downtowncharlottesville.com/', 'Outdoor, Mall', '', 'Charlottesville Historic Downtown Mall', '', '']
 attr[29] = ['1732 Popes Creek Rd, Colonial Beach, VA 22443', 'https://www.nps.gov/gewa/index.htm', 'Historical, Museum, Outdoor, Park', 'https://www.nps.gov/common/uploads/grid_builder/gewa/crop1_1/502C1F95-D865-9F8B-D2D4DD101C54E68D.jpg?width=640&quality=90&mode=crop', 'George Washington Birthplace National Monument', '', '']
 attr[30] = ['9200 Old Dominion Dr, McLean, VA 22102', 'https://www.nps.gov/grfa/index.htm', 'Park, Outdoor', 'https://www.nps.gov/common/uploads/banner_image/ncr/homepage/1CB2262D-BE64-E710-06C03F8E85060371.jpg', 'Great Falls Park', '', '']
 attr[31] = ['101 Callahan Dr, Alexandria, VA 22301', 'https://gwmemorial.org/', 'Museum, Historical', 'https://cdn.shopify.com/s/files/1/1268/2219/t/4/assets/slideshow_1_2048x2048.jpg?v=12699985927918733577', 'George Washington Masonic National Memorial', '', '']
@@ -42,20 +42,34 @@ attr[34] = ['5781 S Lee Hwy, Natural Bridge, VA 24578', 'https://www.dinosaurkin
 attr[35] = ['500 Sylvan Heights Park Way, Scotland Neck, NC 27874', '  https://shwpark.com/', 'Park, Outdoor, Museum', 'https://fblacompetition2022.danieltomov.repl.co/static/bird_park.png', 'Sylvan Heights Bird Park', '', '']
 attr[36] = ['1 Waterside Dr, Norfolk, VA 23510', 'https://nauticus.org/', 'Museum, Historical, Indoor', 'https://nauticus.org/wp-content/uploads/2019/02/Nauticus-logo-white-1.png', 'Nauticus', '', '']
 attr[37] = ['524 J Clyde Morris Blvd, Newport News, VA 23601', 'https://thevlm.org/', 'Museum, Outdoor, Park', 'https://thevlm.org/wp-content/uploads/logo.png', 'Virginia Living Museum', '', '']
-attr[38] = ['549 E Rochambeau Dr, Williamsburg, VA 23188', 'https://www.greatwolf.com/williamsburg', 'Lodging, Amusement, Indoor', 'https://cdn1.greatwolf.com/content/gwl-logo.png', 'Great Wolf Lodge', '', '']
-attr[39] = ['849 General Booth Blvd, Virginia Beach, VA 23451', 'https://www.oceanbreezewaterpark.com/', 'Amusement, Outdoor', 'https://www.oceanbreezewaterpark.com/sites/oceanbreeze2/templates/default/images/logo.svg', 'Ocean Breeze Waterpark', '', '']
+attr[38] = ['549 E Rochambeau Dr, Williamsburg, VA 23188', 'https://www.greatwolf.com/williamsburg', 'Lodging, Amusement, Indoor, Dining, Game Center', 'https://cdn1.greatwolf.com/content/gwl-logo.png', 'Great Wolf Lodge', '', '']
+attr[39] = ['849 General Booth Blvd, Virginia Beach, VA 23451', 'https://www.oceanbreezewaterpark.com/', 'Amusement, Outdoor, Dining', 'https://www.oceanbreezewaterpark.com/sites/oceanbreeze2/templates/default/images/logo.svg', 'Ocean Breeze Waterpark', '', '']
 attr[40] = ['700 S Birdneck Rd, Virginia Beach, VA 23451', 'https://vbmotorworld.com/', 'Amusement, Outdoor', 'https://vbmotorworld.com/wp-content/themes/yootheme/cache/logo-a6042702.png', 'Motor World', '', '']
 attr[41] = ['1420 Natural Tunnel Pkwy, Duffield, VA 24244;', 'https://www.dcr.virginia.gov/state-parks/natural-tunnel', 'Outdoor, Park', 'https://www.dcr.virginia.gov/state-parks/image/data/nt-image-01.jpg', 'Virginia’s Natural Tunnel', '', '']
 attr[42] = ['4621 Columbus St #100, Virginia Beach, VA 23462', 'https://www.apexentertainment.com/virginia-beach/', 'Amusement, Game Center, Indoor', 'https://www.apexentertainment.com/virginia-beach/wp-content/uploads/2019/11/apex-entertainment-logo-new.svg', 'APEX Entertainment', '', '']
 attr[43] = ['825 Greenbrier Cir P, Chesapeake, VA 23320', 'https://defy.com/locations/defy-chesapeake/', 'Trampoline, Amusement, Indoor', 'https://defy.com/wp-content/themes/storefront-child-theme-master/assets/images/defy/defy-logo-large.png', 'DEFY Chesapeake', '', '']
 attr[44] = ['1410 Central Park Blvd, Fredericksburg, VA 22401', 'https://www.skyzone.com/fredericksburg', 'Amusement, Trampoline, Indoor', '', 'Skyzone Fredricksburg', '', '']
 attr[45] = ['21595 Smith Switch Rd, Ashburn, VA 20147', 'https://www.ashburnice.com/', 'Ice Skating, Indoor', 'https://cdn4.sportngin.com/attachments/logo_graphic/8850/1527/logo_touch_icon_size_120.png', 'Ashburn Ice House', '', '']
-attr[46] = ['176 Water Country Pkwy, Williamsburg, VA 23185', 'https://watercountryusa.com/', 'Amusement, Outside, Dining', 'https://watercountryusa.com/-/media/busch-gardens-williamsburg/images/logos/water-country-usa-logo.ashx?version=1_201903222037&h=60&w=100&la=en&hash=CECEE958ABB130440F805C730C21DA039131416B', 'Water Country USA', '', '']
+attr[46] = ['176 Water Country Pkwy, Williamsburg, VA 23185', 'https://watercountryusa.com/', 'Amusement, Outdoor, Dining', 'https://watercountryusa.com/-/media/busch-gardens-williamsburg/images/logos/water-country-usa-logo.ashx?version=1_201903222037&h=60&w=100&la=en&hash=CECEE958ABB130440F805C730C21DA039131416B', 'Water Country USA', '', '']
 attr[47] = ['1800 Lakeside Avenu, Richmond, Virginia 23228', 'https://www.lewisginter.org/', 'Park, Outdoor', '', 'Lewis Ginter Botanical Garden', '', '']
 attr[48] = ['14390 Air and Space Museum Pkwy, Alexandria, VA 20151', 'https://airandspace.si.edu/udvar-hazy-center', 'Indoor, Museum', 'https://airandspace.si.edu/themes/nasm_theme/favicon.ico', 'Steven F. Udvar-Hazy Center', '', '']
-attr[49] = ['5537 Centerville Rd, Williamsburg, VA 23188', 'https://www.goape.com/location/virginia-williamsburg/', 'Outside, Amusement, Park', 'https://www.goape.com/wp-content/uploads/2019/07/goape-staging.png', 'Go Ape! Williamsburg', '', '']
-attr[50] = ['5444 Greenwich Rd, Virginia Beach, VA 23462', 'https://topgolf.com/us/virginia-beach/', 'Outside, Golf', 'https://s3.topgolf.com/theme/logos/logo-TEG-short-filled-white.svg?resize.width=319&amp;resize.height=86&amp;resize.method=cover', 'Top Golf', '', '']
+attr[49] = ['5537 Centerville Rd, Williamsburg, VA 23188', 'https://www.goape.com/location/virginia-williamsburg/', 'Outdoor, Amusement, Park', 'https://www.goape.com/wp-content/uploads/2019/07/goape-staging.png', 'Go Ape! Williamsburg', '', '']
+attr[50] = ['5444 Greenwich Rd, Virginia Beach, VA 23462', 'https://topgolf.com/us/virginia-beach/', 'Outdoor, Golf', 'https://s3.topgolf.com/theme/logos/logo-TEG-short-filled-white.svg?resize.width=319&amp;resize.height=86&amp;resize.method=cover', 'Top Golf', '', '']
 attr[51] = ['213 25th St, Virginia Beach, VA 23451', 'http://www.kingneptunesminigolf.com/', 'Indoor, Golf', 'http://www.kingneptunesminigolf.com/gallery/course.jpg', "King Neptune's Golf", '', '']
+attr[52] = ['1198 George Washington Memorial Pkwy, Alexandria, VA 22314', 'https://www.nps.gov/gwmp/planyourvisit/mtvernontrail.htm', 'Outdoor, Park', '', 'Mount Vernon Trail', '', '']
+attr[53] = ['601 N Manchester St, Arlington, VA 22203', 'https://www.arlingtonva.us/Government/Departments/Parks-Recreation/Locations/Parks/Bluemont-Park', 'Park, Outdoor', '', 'Bluemont Park', '', '']
+attr[54] = ['20315 Commonwealth Center Dr, Ashburn, VA 20147', 'https://www.iflyworld.com/loudoun/', 'Indoor, Amusement', '', 'iFLY Indoor Skydiving - Loudoun', '', '']
+attr[55] = ['20356 Commonwealth Center Dr, Ashburn, VA 20147', 'https://topgolf.com/us/loudoun/', 'Golf, Outdoor', '', 'Topgolf Loudoun', '', '']
+attr[56] = ['', '', '', '', '', '', '']
+attr[57] = ['', '', '', '', '', '', '']
+attr[58] = ['', '', '', '', '', '', '']
+#attr[] = ['', '', '', '', '', '', '', ]
+
+
+firstAttrs = []
 
 for a in attr:
-  storedAttr.append(attractions(a[0], a[1], a[2], a[3], a[4], a[5], a[6]))
+  if a != '':
+    if a[0] != '':
+      firstAttrs.append(a)
+      storedAttr.append(attractions(a[0], a[1], a[2], a[3], a[4], a[5], a[6]))

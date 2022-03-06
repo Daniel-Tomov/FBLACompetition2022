@@ -3,7 +3,7 @@ import sys
 
 sys.path.append(".")
 from Class import *
-from attractions import storedAttr, attr
+from attractions import storedAttr, attr, firstAttrs
 
 app = Flask(__name__)
 #Creating Database
@@ -111,7 +111,7 @@ def main():
       #clears the checklist because the user does not have anything checked
       clear_checkList()
       return render_template("index.html",
-                             attraction=attr,
+                             attraction=firstAttrs,
                              provinceList=provinceList,
                              filters=filters,
                              checkBoxes=checkList)
