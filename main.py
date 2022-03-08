@@ -19,6 +19,8 @@ returnList = []
 filters = []
 provinceList = []
 
+mode = 0 #Mode is "and" mode by default
+
 def filter_from_list(val, actualVal):
     global provinceList
     global filters
@@ -97,6 +99,7 @@ def map():
 @app.route("/mode", methods=["POST", "GET"])
 def mode():
   global mode
+  print(mode)
   if mode == 0:
     mode = 1
     return str(mode) + ' now doing "or" displaying'
@@ -168,12 +171,4 @@ filters.sort()
 provinceList.insert(0, 'All Provinces')
 
 if __name__ == "__main__":
-
-    print("Enter the mode you want to use this program in: ")
-    print('Enter a "0" for remove mode, which shows the user only the attractions')
-    print('that fit the criteria they specified.')
-    print()
-    print('Enter a "1" for add mode, which shows a user attractions')
-    print('that include at least one of the filters they specified.')
-    mode = int(input())
-    app.run(debug=True, host="0.0.0.0", port=80)
+  app.run(debug=True, host="0.0.0.0", port=80)
