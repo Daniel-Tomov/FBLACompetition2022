@@ -19,7 +19,7 @@ returnList = []
 filters = []
 provinceList = []
 
-def remove_filter_from_list(val, actualVal):
+def filter_from_list(val, actualVal):
     global provinceList
     global filters
     global checkList
@@ -44,7 +44,7 @@ def remove_filter_from_list(val, actualVal):
                         returnList.remove(arr)
 
 
-def remove_prov_from_list(val, actualVal):
+def prov_from_list(val, actualVal):
     global provinceList
     global filters
     global checkList
@@ -91,8 +91,20 @@ def add_records_to_list():
 
 @app.route("/map", methods=["POST", "GET"])
 def map():
-    return render_template("other.html",
-                           key='AIzaSyCztFq5Me_V6Neh2RF9G0s9qoSQz9w2AvE')
+    return render_template("other.html",key='AIzaSyCztFq5Me_V6Neh2RF9G0s9qoSQz9w2AvE')
+
+
+@app.route("/mode", methods=["POST", "GET"])
+def mode():
+  global mode
+  if mode == 0:
+    mode = 1
+    return str(mode) + ' now doing "or" displaying'
+  elif mode == 1:
+    mode = 0  
+    return str(mode) + ' now doing "and" displaying'
+  return ''
+
 
 
 @app.route("/", methods=["POST", "GET"])
@@ -115,10 +127,10 @@ def main():
       
       #remove attractions that don't fit the filters the user wanted
       for f in filters:
-        remove_filter_from_list(request.form.get(f), f)
+        filter_from_list(request.form.get(f), f)
         #remove provinces from the list that the user didn't want
       for p in provinceList:
-        remove_prov_from_list(request.form.get("provinceSelector"), p)
+        prov_from_list(request.form.get("provinceSelector"), p)
       return render_template(
             "index.html",
             attraction=returnList,
