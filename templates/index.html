@@ -46,7 +46,7 @@
               <input type="radio" name="provinceSelector" value="{{prov}}" {{ checkBoxes[provinceList.index(prov) + filters|length] }}><p>{{prov}}</p>
             </div></li>
             {% endfor %}
-            <li><button id ="applyButton" type="submit" name="button" value="search">Apply Filters</button></li>
+            <li><button id="applyButton" type="submit" name="button" value="search">Apply Filters</button></li>
           </ul>
         </form>
         <button id="reset" onclick="reset()">Reset Filters</button>
@@ -56,6 +56,7 @@
             <div class="attractionBox">
               <div id="noMatch">
                 <p class="attractionName">There were no matches for your criteria</p>
+                <button id="backButton" onclick="window.location.href = '{{ url_for('main') }}'">Go Back</button>
             </div>
           {% endif %}
           {% for record in attraction %}
