@@ -39,7 +39,7 @@ def remove_prov_from_list(val, actualVal):
     global filters
     global checkList
     #check if the the user selected the province
-    if (val == "All Provinces"):
+    if (val == "All Provinces" and actualVal == "All Provinces"):
       checkList[provinceList.index(actualVal) + len(filters)] = "checked"
     elif val == actualVal:
         #set the same index as the province in its list in the checked list

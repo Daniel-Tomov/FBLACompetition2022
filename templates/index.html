@@ -70,21 +70,48 @@
               </div>
             </div>
           {% endfor %}
-          <!-- <p class="attractionName">Attractions on this page: {{ attraction|length }}</p> -->
-          <p>All images used are the copyright &copy; of the attraction they feature. All rights reserved to the attraction.</p>
         </div>
 
       </main>
     </div>
+          <p id="copyright" style="clear:both; position:absolute; text-align:center; font-size:18px;">All images used are the copyright &copy; of the attraction they feature. All rights reserved to the attraction.</p>
+          <!-- <p class="attractionName">Attractions on this page: {{ attraction|length }}</p> -->
     <!-- <iframe frameborder=0 style='width:100%;height:500px; display:none;' src='//www.zeemaps.com/pub?group=4334511'> </iframe> -->
   
     <script>
+		function getWidth() {
+		  return Math.max(
+			document.body.scrollWidth,
+			document.documentElement.scrollWidth,
+			document.body.offsetWidth,
+			document.documentElement.offsetWidth,
+			document.documentElement.clientWidth
+		  );
+}		function getHeight() {
+		  return Math.max(
+			document.body.scrollHeight,
+			document.documentElement.scrollHeight,
+			document.body.offsetHeight,
+			document.documentElement.offsetHeight,
+			document.documentElement.clientHeight
+		  );
+		}
+
       function reset(){
         var elements = document.getElementsByClassName("checkBox");
         for (i = 0; i < elements.length; i++){
           elements[i].firstElementChild.checked = false;
         }
       }
+	  var copyright = document.getElementById("copyright")
+	  copyright.style.top = getHeight() + "px";
+	  copyright.style.left = ((getWidth() / 2) - (copyright.offsetWidth / 2)) + "px";
+	  /*
+	  console.log(getHeight())
+	  console.log(getWidth())
+	  console.log(((getWidth() / 2) - copyright.offsetWidth) + "px")
+	  console.log(copyright)
+	  */
       console.log("Number of attractions: {{ attraction|length }}")
     </script>
     </body>
