@@ -28,4 +28,4 @@ March 5, 2022 - https://youtu.be/kSB46POVrN8
 
 # Images
 
-Images property of the respective attraction.
+All images used are the copyright &copy; of the attraction they feature. All rights reserved to the attraction.

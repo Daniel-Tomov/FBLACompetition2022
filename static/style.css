@@ -27,12 +27,16 @@ header{
 }
 
 #logo{
-  width:21%;
+  width:25%;
   height:auto;
   float:left;
   position: relative;
   top:7px;
   left:50px;
+}
+
+#logoText{
+  height:auto;
 }
 
 #logo img {

@@ -13,7 +13,8 @@
     <div id="container">
       <header>
         <div id ="logo">
-          <img src="/static/images/logo.png" alt="logo">
+          <!--<img src="/static/images/logo.png" alt="logo">-->
+		  <p style="color:white; font-size:30px;" id="logoText">VIRGINIA IS FOR LO<span style="color:red;">&#10084;</span>ERS</p>
         </div>
 
         <nav>
@@ -74,7 +75,7 @@
 
       </main>
     </div>
-          <p id="copyright" style="clear:both; position:absolute; text-align:center; font-size:18px;">All images used are the copyright &copy; of the attraction they feature. All rights reserved to the attraction.</p>
+          <p id="copyright" style="clear:both; position:absolute; text-align:center; font-size:18px; width:100%">All images used are the copyright &copy; of the attraction they feature. All rights reserved to the attraction.</p>
           <!-- <p class="attractionName">Attractions on this page: {{ attraction|length }}</p> -->
     <!-- <iframe frameborder=0 style='width:100%;height:500px; display:none;' src='//www.zeemaps.com/pub?group=4334511'> </iframe> -->
   
@@ -105,7 +106,7 @@
       }
 	  var copyright = document.getElementById("copyright")
 	  copyright.style.top = getHeight() + "px";
-	  copyright.style.left = ((getWidth() / 2) - (copyright.offsetWidth / 2)) + "px";
+	  //copyright.style.left = ((getWidth() / 2) - (copyright.offsetWidth / 2)) + "px";
 	  /*
 	  console.log(getHeight())
 	  console.log(getWidth())
