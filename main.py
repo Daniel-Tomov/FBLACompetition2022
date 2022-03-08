@@ -96,10 +96,9 @@ def map():
     return render_template("other.html",key='AIzaSyCztFq5Me_V6Neh2RF9G0s9qoSQz9w2AvE')
 
 
-@app.route("/mode", methods=["POST", "GET"])
-def mode():
+@app.route("/modePage", methods=["POST", "GET"])
+def modePage():
   global mode
-  print(mode)
   if mode == 0:
     mode = 1
     return str(mode) + ' now doing "or" displaying'
