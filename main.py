@@ -5,6 +5,8 @@ sys.path.append(".")
 from Class import *
 from attractions import storedAttr, attr, firstAttrs
 
+
+
 app = Flask(__name__)
 #Creating Database
 #Format is Address, Website, Tags, image address, name
@@ -17,27 +19,35 @@ returnList = []
 filters = []
 provinceList = []
 
-
 def remove_filter_from_list(val, actualVal):
     global provinceList
     global filters
     global checkList
     global returnList
+    global mode
     #check if the filter was checked
     if val == "on":
         #set the same index as the filter in its list in the checked list
         checkList[filters.index(actualVal)] = "checked"
         for i in storedAttr:
             arr = i.get_data()
-            #remove attractions that do not meet the filter
-            if actualVal in arr[2]:
+            if mode == 1:
+            #add attractions that meet the filters
+                if actualVal in arr[2]:
                     returnList.append(arr)
+                    
+            elif mode == 0:
+            #remove attractions that do not meet the filter
+                if actualVal not in arr[2]:
+                    if arr in returnList:
+                        returnList.remove(arr)
 
 
 def remove_prov_from_list(val, actualVal):
     global provinceList
     global filters
     global checkList
+    global mode
     #check if the the user selected the province
     if (val == "All Provinces" and actualVal == "All Provinces"):
       checkList[provinceList.index(actualVal) + len(filters)] = "checked"
@@ -48,9 +58,16 @@ def remove_prov_from_list(val, actualVal):
             data = i.get_data()
             #Splits the address into an array
             prov = data[0].split(", ")
+            if mode == 0:
             #remove attractions that are not in the selected province
-            if actualVal in prov[1]:
-                    returnList.append(data)
+                if actualVal not in prov[1]:
+                    if data in returnList:
+                        returnList.remove(data)
+                    
+            elif mode == 1:
+                if actualVal not in prov[1]:
+            	    if data in returnList:
+                        returnList.remove(data)
 
 
 def clear_checkList():
@@ -86,8 +103,10 @@ def main():
   #Run if the user is sending data back
   if request.method == "POST":
   #Add the attractions to the returnList so they can be removed for a POST request. The POST includes the filters the user selected
-    add_records_to_list()
-    returnList = []
+    if mode == 0:
+        add_records_to_list()
+    elif mode == 1:
+        returnList = []
     #clears the checklist because we don't know what the user checked yet
     clear_checkList()
     #Perform the operations if the button with search was pressed
@@ -136,4 +155,12 @@ filters.sort()
 provinceList.insert(0, 'All Provinces')
 
 if __name__ == "__main__":
+
+    print("Enter the mode you want to use this program in: ")
+    print('Enter a "0" for remove mode, which shows the user only the attractions')
+    print('that fit the criteria they specified.')
+    print()
+    print('Enter a "1" for add mode, which shows a user attractions')
+    print('that include at least one of the filters they specified.')
+    mode = int(input())
     app.run(debug=True, host="0.0.0.0", port=80)
