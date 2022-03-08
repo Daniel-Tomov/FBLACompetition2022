@@ -34,6 +34,7 @@ def remove_filter_from_list(val, actualVal):
             if mode == 1:
             #add attractions that meet the filters
                 if actualVal in arr[2]:
+                  if arr not in returnList:
                     returnList.append(arr)
                     
             elif mode == 0:
@@ -69,7 +70,7 @@ def remove_prov_from_list(val, actualVal):
             	    if data in returnList:
                         returnList.remove(data)
 
-
+#
 def clear_checkList():
     global checkList
     global filters
