@@ -22,6 +22,7 @@ def remove_filter_from_list(val, actualVal):
     global provinceList
     global filters
     global checkList
+    global returnList
     #check if the filter was checked
     if val == "on":
         #set the same index as the filter in its list in the checked list
@@ -29,9 +30,8 @@ def remove_filter_from_list(val, actualVal):
         for i in storedAttr:
             arr = i.get_data()
             #remove attractions that do not meet the filter
-            if actualVal not in arr[2]:
-                if arr in returnList:
-                    returnList.remove(arr)
+            if actualVal in arr[2]:
+                    returnList.append(arr)
 
 
 def remove_prov_from_list(val, actualVal):
@@ -49,9 +49,8 @@ def remove_prov_from_list(val, actualVal):
             #Splits the address into an array
             prov = data[0].split(", ")
             #remove attractions that are not in the selected province
-            if actualVal not in prov[1]:
-                if data in returnList:
-                    returnList.remove(data)
+            if actualVal in prov[1]:
+                    returnList.append(data)
 
 
 def clear_checkList():
@@ -88,6 +87,7 @@ def main():
   if request.method == "POST":
   #Add the attractions to the returnList so they can be removed for a POST request. The POST includes the filters the user selected
     add_records_to_list()
+    returnList = []
     #clears the checklist because we don't know what the user checked yet
     clear_checkList()
     #Perform the operations if the button with search was pressed
