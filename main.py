@@ -104,7 +104,6 @@ def modePage():
     return str(mode) + ' now doing "and" displaying'
   return ''
 
-
 @app.route("/", methods=["POST", "GET"])
 def main():
   return render_template("index.html")
