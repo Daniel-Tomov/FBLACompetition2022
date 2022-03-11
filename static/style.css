@@ -20,6 +20,15 @@ html, body{
 	margin: 0px;
 }
 
+#index_container{
+  width:100%;
+  height:auto;
+  background-image: url('images/index_background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-size: cover;
+}
+
 header{
   height:60px;
   width:100%;
@@ -184,12 +193,23 @@ form{
 }
 
 #content{
-  float:right;
   width:55%;
   height:auto;
   margin-top: 75px;
   margin-right:8%;
-  background-image: /static/images/
+  background-image: url('images/index_background.jpg');
+}
+
+#index_content{
+  height:500px;
+  width: 50%;
+  background-color: white;
+  opacity: 0.90;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius:20px;
 }
 
 #noMatch{

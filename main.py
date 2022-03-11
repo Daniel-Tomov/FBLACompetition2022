@@ -104,21 +104,6 @@ def modePage():
     return str(mode) + ' now doing "and" displaying'
   return ''
 
-=======
->>>>>>> add
-=======
->>>>>>> add
-
-@app.route("/modePage", methods=["POST", "GET"])
-def modePage():
-  global mode
-  if mode == 0:
-    mode = 1
-    return str(mode) + ' now doing "or" displaying'
-  elif mode == 1:
-    mode = 0  
-    return str(mode) + ' now doing "and" displaying'
-  return ''
 
 @app.route("/", methods=["POST", "GET"])
 def main():

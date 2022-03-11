@@ -10,7 +10,7 @@
     <link rel="icon" type="image/jpg" href="{{ url_for('static', filename='favicon.ico') }}"/>
   </head>
   <body>
-    <div id="container">
+    <div id="index_container">
       <header>
         <div id ="logo">
           <!--<img src="/static/images/logo.png" alt="logo">-->
@@ -46,63 +46,30 @@
                 <li><div class="checkBox">
                 <input type="radio" name="provinceSelector" value="{{prov}}" {{ checkBoxes[provinceList.index(prov) + filters|length] }}><p>{{prov}}</p>
               </div></li>
-<<<<<<< HEAD
-<<<<<<< HEAD
             {% endfor %}
             
-            <li><p class="searchText">Provinces</p><li>
-              {% for prov in provinceList %}
-              <li><div class="checkBox">
-              <input type="radio" name="provinceSelector" value="{{prov}}" {{ checkBoxes[provinceList.index(prov) + filters|length] }}><p>{{prov}}</p>
-            </div></li>
-            {% endfor %}
             <li><button id="applyButton" type="submit" name="button" value="search">Apply Filters</button></li>
           </ul>
         </form>
         <button id="reset" onclick="reset()">Reset Filters</button>
-=======
-=======
->>>>>>> add
-              {% endfor %}
               <li><button id="applyButton" type="submit" name="button" value="search">Apply Filters</button></li>
             </ul>
           </form>
           <button id="reset" onclick="reset()">Reset Filters</button>
-<<<<<<< HEAD
->>>>>>> add
         </div>
         -->
-        <div id="content">
-<<<<<<< HEAD
-          {% if attraction|length == 0 %}
-            <div class="attractionBox">
-              <div id="noMatch">
-                <p class="attractionName">There were no matches for your criteria</p>
-                <button id="backButton" onclick="window.location.href = '{{ url_for('main') }}'">Go Back</button>
-            </div>
-          {% endif %}
-          {% for record in attraction %}
-            <div class="attractionBox">
-              <div class="attractionInfo">
-                <p class="attractionName">{{record[4]}}</p>
-                <p class="attractionAddr">Address: {{record[0]}}</p>
-                <p>Website: <a class="attractionWeb" href="{{record[1]}}">{{record[1]}}</a></p>
-                <p class="attractionTags">Tags: {{record[2]}}</p>
-              </div>
-              <div class="attractionImgDiv">
-                <img class="attractionImg" src="/static/images/{{record[4]}}.png" alt="{{record[4]}}">
-              </div>
-            </div>
-          {% endfor %}
-=======
-          
->>>>>>> add
-=======
-        </div>
-        -->
-        <div id="content">
-          
->>>>>>> add
+        <div id="index_content">
+          <div id="formDiv">
+            <form action="#" method="post">
+              <label class="searchText" for="tags">Filter by Tags</label>
+              <select name="tags" id="selectDropDown">
+                <option value="none">Filtering by all tags</option>
+                {% for fil in filters %}
+                <option value="{{ fil }}">{{ fil }}</option>
+                {% endfor %}
+              </select>
+            </form>
+          </div>
         </div>
 
       </main>
@@ -141,6 +108,7 @@
 	  copyright.style.top = getHeight() + "px";
 	  var period = document.getElementById("period")
 	  period.style.top = getHeight() + "px";
+    document.getElementById("index_container").style.height = getHeight() + "px";
 	  //copyright.style.left = ((getWidth() / 2) - (copyright.offsetWidth / 2)) + "px";
 	  /*
 	  console.log(getHeight())
