@@ -5,11 +5,6 @@ sys.path.append(".")
 from Class import *
 from attractions import storedAttr, attr, firstAttrs
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> add
 app = Flask(__name__)
 #Creating Database
 #Format is Address, Website, Tags, image address, name
@@ -98,8 +93,6 @@ def add_records_to_list():
 def map():
     return render_template("other.html",key='AIzaSyCztFq5Me_V6Neh2RF9G0s9qoSQz9w2AvE')
 
-<<<<<<< HEAD
-
 @app.route("/modePage", methods=["POST", "GET"])
 def modePage():
   global mode
@@ -111,6 +104,8 @@ def modePage():
     return str(mode) + ' now doing "and" displaying'
   return ''
 
+=======
+>>>>>>> add
 =======
 >>>>>>> add
 
@@ -190,8 +185,5 @@ filters.sort()
 provinceList.insert(0, 'All Provinces')
 
 if __name__ == "__main__":
-<<<<<<< HEAD
+
   app.run(debug=True, host="0.0.0.0", port=80)
-=======
-  app.run(debug=True, host="0.0.0.0", port=80)
->>>>>>> add
