@@ -29,25 +29,15 @@
 
       </header>
       <main>
-        <!--
         <div id="formDiv">
-          <form action="#" method="post">
-            <ul>
-              <li><p class="searchText">Filter your search by:</p><li>
-              <li><p class="searchText">Type of Attraction</p><li>
-              {% for fil in filters %}
-                <li><div class="checkBox">
-                <input type="checkbox" name="{{fil}}" {{ checkBoxes[filters.index(fil)] }}><p>{{fil}}</p>
-                </div></li>
-              {% endfor %}
-              
-              <li><p class="searchText">Provinces</p><li>
-                {% for prov in provinceList %}
-                <li><div class="checkBox">
-                <input type="radio" name="provinceSelector" value="{{prov}}" {{ checkBoxes[provinceList.index(prov) + filters|length] }}><p>{{prov}}</p>
+        <form action="#" method="post">
+          <ul>
+            <li><p class="searchText">Filter your search by:</p><li>
+            <li><p class="searchText">Type of Attraction</p><li>
+            {% for fil in filters %}
+              <li><div class="checkBox">
+              <input type="checkbox" name="{{fil}}" {{ checkBoxes[filters.index(fil)] }}><p>{{fil}}</p>
               </div></li>
-<<<<<<< HEAD
-<<<<<<< HEAD
             {% endfor %}
             
             <li><p class="searchText">Provinces</p><li>
@@ -60,20 +50,8 @@
           </ul>
         </form>
         <button id="reset" onclick="reset()">Reset Filters</button>
-=======
-=======
->>>>>>> add
-              {% endfor %}
-              <li><button id="applyButton" type="submit" name="button" value="search">Apply Filters</button></li>
-            </ul>
-          </form>
-          <button id="reset" onclick="reset()">Reset Filters</button>
-<<<<<<< HEAD
->>>>>>> add
         </div>
-        -->
         <div id="content">
-<<<<<<< HEAD
           {% if attraction|length == 0 %}
             <div class="attractionBox">
               <div id="noMatch">
@@ -94,15 +72,6 @@
               </div>
             </div>
           {% endfor %}
-=======
-          
->>>>>>> add
-=======
-        </div>
-        -->
-        <div id="content">
-          
->>>>>>> add
         </div>
 
       </main>
