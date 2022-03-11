@@ -6,7 +6,6 @@ from Class import *
 from attractions import storedAttr, attr, firstAttrs
 
 
-
 app = Flask(__name__)
 #Creating Database
 #Format is Address, Website, Tags, image address, name
@@ -107,10 +106,12 @@ def modePage():
     return str(mode) + ' now doing "and" displaying'
   return ''
 
-
-
 @app.route("/", methods=["POST", "GET"])
 def main():
+  return render_template("index.html")
+
+@app.route("/search", methods=["POST", "GET"])
+def search():
   #import global variables
   global checkList
   global returnList
@@ -134,7 +135,7 @@ def main():
       for p in provinceList:
         prov_from_list(request.form.get("provinceSelector"), p)
       return render_template(
-            "index.html",
+            "search.html",
             attraction=returnList,
             provinceList=provinceList,
             filters=filters,
