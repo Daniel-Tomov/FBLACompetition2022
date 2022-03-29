@@ -106,12 +106,9 @@ def modePage():
 
 @app.route("/", methods=["POST", "GET"])
 def main():
-  return render_template("index.html")
-
-@app.route("/search", methods=["POST", "GET"])
-def search():
   #import global variables
   global checkList
+  global filters, provinceList
   global returnList
 
   #Run if the user is sending data back
@@ -141,9 +138,11 @@ def search():
 
   #Runs if the user is not sending data back
   elif request.method == "GET":
-      #clears the checklist because the user does not have anything checked
-      clear_checkList()
-      return render_template("index.html",
+    #clears the checklist because the user does not have anything checked
+    clear_checkList()
+    print(filters)
+    print(provinceList)
+    return render_template("index.html",
                              attraction=firstAttrs,
                              provinceList=provinceList,
                              filters=filters,
@@ -167,6 +166,7 @@ for i in range(0, len(storedAttr)):
 provinceList.sort()
 filters.sort()
 provinceList.insert(0, 'All Provinces')
+
 
 if __name__ == "__main__":
 
