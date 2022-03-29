@@ -61,62 +61,137 @@
         <div id="index_content">
           <div id="formDiv">
             <form action="#" method="post">
-              <label class="searchText" for="tags">Filter by Tags</label>
-              <select name="tags" id="selectDropDown">
-                <option value="none">Filtering by all tags</option>
-                {% for fil in filters %}
-                <option value="{{ fil }}">{{ fil }}</option>
-                {% endfor %}
-              </select>
+              <div id="filterByTags">
+                <label class="searchText" for="tags">Filter by Tags</label>
+                <select name="tags" class="selectDropDown">
+                  <option value="none">Filtering by all tags</option>
+                  {% for fil in filters %}
+                  <option value="{{ fil }}">{{ fil }}</option>
+                  {% endfor %}
+                </select>
+                <p id="generate" onclick="createNewSearchField()">Generate</p>
+                <div id="addAdditionalSearch">
+                </div>
+              </div>
+              <div class="filterByCities">
+                <label class="searchText" for="cities">Filter by Cities</label>
+                <select name="cities" class="selectDropDown">
+                  <option value="none">Filtering by all cities</option>
+                  {% for prov in provinceList %}
+                  <option value="{{ prov }}">{{ prov }}</option>
+                  {% endfor %}
+                </select>
+              </div><button id="applyButton" type="submit" name="button" value="search">Apply Filters</button>
             </form>
+          <button id="reset" onclick="reset()">Reset Filters</button>
           </div>
         </div>
 
       </main>
     </div>
-          <p id="copyright" style="clear:both; position:absolute; text-align:center; font-size:18px; width:100%">All images used are Copyright &copy; of the attraction they feature. All rights reserved to the attraction.</p>
-		  <p id="period" style="color:white; clear:both; position:absolute; text-align:center; font-size:18px; width:100%">.</p>
+          <p id="copyright">All images used are Copyright &copy; of the attraction they feature. All rights reserved to the attraction.</p>
+		  <p id="period">.</p>
           <!-- <p class="attractionName">Attractions on this page: {{ attraction|length }}</p> -->
     <!-- <iframe frameborder=0 style='width:100%;height:500px; display:none;' src='//www.zeemaps.com/pub?group=4334511'> </iframe> -->
   
     <script>
-		function getWidth() {
-		  return Math.max(
-			document.body.scrollWidth,
-			document.documentElement.scrollWidth,
-			document.body.offsetWidth,
-			document.documentElement.offsetWidth,
-			document.documentElement.clientWidth
-		  );
-}		function getHeight() {
-		  return Math.max(
-			document.body.scrollHeight,
-			document.documentElement.scrollHeight,
-			document.body.offsetHeight,
-			document.documentElement.offsetHeight,
-			document.documentElement.clientHeight
-		  );
-		}
+      function createNewSearchField(){
+        //create <label> element
+        //var label = document.createElement("label");
+        //label.className = "searchText";
+        //label.innerHTML = "Filter by Tags"
+        //label.htmlFor = "cities";
 
-      function reset(){
-        var elements = document.getElementsByClassName("checkBox");
-        for (i = 0; i < elements.length; i++){
-          elements[i].firstElementChild.checked = false;
+        var additionalSearch = document.createElement("div");
+        additionalSearch.className = 'additionalSearch';
+        if (document.querySelectorAll('.additionalSearch').length < 4){
+          //Add the logical opperators
+          var select = document.createElement("select");
+          var logicalOperators = ["And", "Or"];
+          if (document.querySelectorAll('.additionalSearch').length == 0) select.name = "logicalOne";
+          if (document.querySelectorAll('.additionalSearch').length == 1) select.name = "logicalTwo";
+          if (document.querySelectorAll('.additionalSearch').length == 2) select.name = "logicalThree";
+          if (document.querySelectorAll('.additionalSearch').length == 3) select.name = "logicalFour";
+          if (document.querySelectorAll('.additionalSearch').length == 4) select.name = "additionalTagsFive";
+          for (const operator of logicalOperators){
+            var option = document.createElement("option");
+            option.value = operator;
+            option.text = operator;
+            select.appendChild(option);
+          }
+          additionalSearch.appendChild(select);
+          
+          //make select element to put into HTML
+          var select = document.createElement("select");
+          if (document.querySelectorAll('.additionalSearch').length == 0) select.name = "additionalTagsOne";
+          if (document.querySelectorAll('.additionalSearch').length == 1) select.name = "additionalTagsTwo";
+          if (document.querySelectorAll('.additionalSearch').length == 2) select.name = "additionalTagsThree";
+          if (document.querySelectorAll('.additionalSearch').length == 3) select.name = "additionalTagsFour";
+          if (document.querySelectorAll('.additionalSearch').length == 4) select.name = "additionalTagsFive";
+
+          
+          //console.log(document.querySelectorAll('.additionalSearch').length)
+          //add <option> to HTML with Flask
+          {% for fil in filters %}
+          var option = document.createElement("option");
+          option.value = "{{ fil }}";
+          option.text = "{{fil}}";
+          select.appendChild(option);
+          {% endfor %}
+          additionalSearch.appendChild(select);
+          //document.getElementByClassName('searchText').innerHTML=  '';
+
+          
+          additionalSearch.className = "additionalSearch"
+          //create <select> element
+          var select = document.createElement("select");
+          
+          document.getElementById("addAdditionalSearch").appendChild(additionalSearch);
         }
       }
-	  var copyright = document.getElementById("copyright")
-	  copyright.style.top = getHeight() + "px";
-	  var period = document.getElementById("period")
-	  period.style.top = getHeight() + "px";
-    document.getElementById("index_container").style.height = getHeight() + "px";
-	  //copyright.style.left = ((getWidth() / 2) - (copyright.offsetWidth / 2)) + "px";
-	  /*
-	  console.log(getHeight())
-	  console.log(getWidth())
-	  console.log(((getWidth() / 2) - copyright.offsetWidth) + "px")
-	  console.log(copyright)
-	  */
+  		function getWidth() {
+  		  return Math.max(
+  			document.body.scrollWidth,
+  			document.documentElement.scrollWidth,
+  			document.body.offsetWidth,
+  			document.documentElement.offsetWidth,
+  			document.documentElement.clientWidth
+  		  );
+      }	  
+      function getHeight() {
+  		  return Math.max(
+  			document.body.scrollHeight,
+  			document.documentElement.scrollHeight,
+  			document.body.offsetHeight,
+  			document.documentElement.offsetHeight,
+  			document.documentElement.clientHeight
+  		  );
+  		}
+  
+      function reset(){
+        const boxes = document.querySelectorAll('.additionalSearch');
+        boxes.forEach(box => {
+          box.remove();
+        });
+
+        const selects = document.querySelectorAll(".selectDropDown");
+        selects.forEach(first => {
+          first.options[0].selected = true;
+        });
+      }
+  	  var copyright = document.getElementById("copyright")
+  	  copyright.style.top = getHeight() + "px";
+  	  var period = document.getElementById("period")
+  	  period.style.top = getHeight() + "px";
+      document.getElementById("index_container").style.height = getHeight() + "px";
+  	  //copyright.style.left = ((getWidth() / 2) - (copyright.offsetWidth / 2)) + "px";
+  	  /*
+  	  console.log(getHeight())
+  	  console.log(getWidth())
+  	  console.log(((getWidth() / 2) - copyright.offsetWidth) + "px")
+  	  console.log(copyright)
+  	  */
       console.log("Number of attractions: {{ attraction|length }}")
     </script>
-    </body>
+  </body>
 </html>

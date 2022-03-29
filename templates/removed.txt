@@ -1,0 +1,78 @@
+from <main>
+'''html
+        <!--
+        <div id="formDiv">
+          <form action="#" method="post">
+            <ul>
+              <li><p class="searchText">Filter your search by:</p><li>
+              <li><p class="searchText">Type of Attraction</p><li>
+              {% for fil in filters %}
+                <li><div class="checkBox">
+                <input type="checkbox" name="{{fil}}" {{ checkBoxes[filters.index(fil)] }}><p>{{fil}}</p>
+                </div></li>
+              {% endfor %}
+              
+              <li><p class="searchText">Provinces</p><li>
+                {% for prov in provinceList %}
+                <li><div class="checkBox">
+                <input type="radio" name="provinceSelector" value="{{prov}}" {{ checkBoxes[provinceList.index(prov) + filters|length] }}><p>{{prov}}</p>
+              </div></li>
+            {% endfor %}
+            
+            <li><button id="applyButton" type="submit" name="button" value="search">Apply Filters</button></li>
+          </ul>
+        </form>
+        <button id="reset" onclick="reset()">Reset Filters</button>
+              <li><button id="applyButton" type="submit" name="button" value="search">Apply Filters</button></li>
+            </ul>
+          </form>
+          <button id="reset" onclick="reset()">Reset Filters</button>
+        </div>
+        -->
+'''
+
+from app.py
+'''python
+@app.route("/search", methods=["POST", "GET"])
+def search():
+  #import global variables
+  global checkList
+  global returnList
+
+  #Run if the user is sending data back
+  if request.method == "POST":
+  #Add the attractions to the returnList so they can be removed for a POST request. The POST includes the filters the user selected
+    if mode == 0:
+        add_records_to_list()
+    elif mode == 1:
+        returnList = []
+    #clears the checklist because we don't know what the user checked yet
+    clear_checkList()
+    #Perform the operations if the button with search was pressed
+    if (request.form['button'] == 'search'):
+      
+      #remove attractions that don't fit the filters the user wanted
+      for f in filters:
+        filter_from_list(request.form.get(f), f)
+        print(request.form.get(f))
+        #remove provinces from the list that the user didn't want
+      for p in provinceList:
+        prov_from_list(request.form.get("provinceSelector"), p)
+      return render_template(
+            "search.html",
+            attraction=returnList,
+            provinceList=provinceList,
+            filters=filters,
+            checkBoxes=checkList)
+
+  #Runs if the user is not sending data back
+  elif request.method == "GET":
+      #clears the checklist because the user does not have anything checked
+      clear_checkList()
+      return render_template("index.html",
+                             attraction=firstAttrs,
+                             provinceList=provinceList,
+                             filters=filters,
+                             checkBoxes=checkList)
+
+    '''

@@ -16,6 +16,7 @@ app = Flask(__name__)
 returnList = []
 filters = []
 provinceList = []
+checkList = []
 
 mode = 0 #Mode is "and" mode by default
 
@@ -107,10 +108,6 @@ def modePage():
 
 @app.route("/", methods=["POST", "GET"])
 def main():
-  return render_template("index.html")
-
-@app.route("/search", methods=["POST", "GET"])
-def search():
   #import global variables
   global checkList
   global returnList
@@ -126,13 +123,34 @@ def search():
     clear_checkList()
     #Perform the operations if the button with search was pressed
     if (request.form['button'] == 'search'):
+
       
-      #remove attractions that don't fit the filters the user wanted
-      for f in filters:
-        filter_from_list(request.form.get(f), f)
-        #remove provinces from the list that the user didn't want
-      for p in provinceList:
-        prov_from_list(request.form.get("provinceSelector"), p)
+      #get the value of the first dropdown
+      originalDropDown = request.form.get("tags")
+      #print(originalDropDown)
+      #get the rest of the dropdowns (if there are any)
+      #there are a maximum of five dropdowns available
+      dropDownOne = request.form.get("tagsOne")
+      dropDownTwo = request.form.get("tagsTwo")
+      dropDownThree = request.form.get("tagsThree")
+      dropDownFour = request.form.get("tagsFour")
+      dropDownFive = request.form.get("tagsFive")
+
+      logicalOne = request.form.get("logicalOne")
+      logicalTwo = request.form.get("logicalTwo")
+      logicalThree = request.form.get("logicalThree")
+      logicalFour = request.form.get("logicalFour")
+      logicalFive = request.form.get("logicalFive")
+      
+      for key, val in request.form.items():
+        print(key,val)
+        
+      
+      #get the value of the cities dropdown
+      selectedCity = request.form.get("cities")
+      #print(selectedCity)
+      
+      
       return render_template(
             "search.html",
             attraction=returnList,
@@ -150,7 +168,8 @@ def search():
                              filters=filters,
                              checkBoxes=checkList)
 
-    
+
+
 #create the "fitler" and "ProvinceList" that will be passed to the html
 for i in range(0, len(storedAttr)):
     indvAttr = storedAttr[i].get_data()

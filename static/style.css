@@ -128,12 +128,22 @@ nav{
 
 #formDiv{
   height:1250px;
-  width: 200px;
+  width: 100%;
   float:left;
   margin-top:50px;
   margin-left:11%;
   padding:0;
 }
+
+#addAdditionalSearch{
+  width:300px;
+}
+
+.additionalSearch{
+  width:300px;
+}
+
+
 
 #reset{
   margin: 5px auto;
@@ -253,4 +263,21 @@ form{
 
 #map {
   height: 100%;
+}
+
+#copyright{
+  clear:both; 
+  position:absolute;
+  text-align:center;
+  font-size:18px;
+  width:100%
+}
+
+#period{
+  color:white;
+  clear:both;
+  position:absolute;
+  text-align:center;
+  font-size:18px;
+  width:100%"
 }

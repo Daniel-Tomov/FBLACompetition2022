@@ -1,4 +1,4 @@
-from replit import db
+'''from replit import db
 
 #Creating Database
 #Format is Region, Address, Website, Tags, image address, information
@@ -15,4 +15,4 @@ keys = db.keys()
 
 #value = db["Botanical Garden"]
 #print(value)
-#print(value[1])
+#print(value[1])'''
